@@ -1,26 +1,18 @@
-# Kaimana Redux
+/*
+ * @author Eugene Andruszczenko
+ *  ___ ___ _           _   _   
+ * |_  |_  | |_ ___ ___| |_| |_ 
+ * |_  |  _|  _| -_| -_|  _|   |
+ * |___|___|_| |___|___|_| |_|_|
+ * 
+ * @version 0.0.5
+ * @date created 08/19/16
+ * @date updated 10/26/16
+ * @web http://moledcule.club
+ */
 
-this is a public repo for a **basic version** of a mash up between the slimmed down [moledcule](http://moledcule.club) version of original Kaimana code
+ /*
 
-the intent behind this code is to normalize and introduce efficiencies to the existing Kaimana code base
-
-in the **examples folder** you will find a few sketches *(currently there is only 'basic')*
-
------
-
-##basic example
-files:
-* basic.ino *(main program)*
-* Comm.h *(all comm port utilities)*
-* Pins.h *(input output functionality)*
-* Structures.h *(structs definitions for program)*
-* Utils.h *(transformation utilities)*
-
------
-
-###basic.ino
-how are pins mapped to the Kainana device
-```
                                       +-----+
          +----[PWR]-------------------| USB |--+
          |                            +-----+  |
@@ -48,40 +40,74 @@ how are pins mapped to the Kainana device
          |  UNO_R3    GND MOSI 5V  ____________/
          \_______________________/
 
-```
-this file is pretty damn clean and easy to read, that was the whole intent
-
-###Comm.h
-this header file provide access and functionality to the Serial port on the arduino.
-
-**please note:** the original designers of the Kaimana board used digital pins 0 (RX) and 1 (TX) for button IO. 
-
-*methods*
-
-####startComm
-```
-/*
-** @method startComm
-** @desc start serial port if DEBUG is defined
 */
-startComm()
-```
 
-####listenComm
-```
 /*
-** @method listenComm
-** @desc listen to serial port if DEBUG is defined
-*/
-listenComm()
-```
+ * @description Config
+ */
+#include <Arduino.h>
 
-####printComm
-```
+ /*
+ *
+ */
+unsigned long now;
+unsigned long timestamp = 0;
+const long interval = 100;
+const long duration = 1500;
+
 /*
-** @method printComm
-** @param str (String)
-** @desc print string to serial port if DEBUG is defined
-*/
-printComm(str)
-```
+ * @description DEBUG
+ */
+#define DEBUG
+
+ /*
+ * @description Config
+ */
+#include "Structures.h"
+
+/*
+ * @description Comm
+ */ 
+#include "Comm.h"
+
+/*
+ * @description Utils
+ */ 
+#include "Utils.h"
+
+/*
+ * @description Pins
+ */
+#include "Pins.h"
+
+/*
+ * @method setup
+ * @description main litebrite setup
+ */
+void setup()
+{ 
+	/*
+	 *
+	 */
+	startComm();
+	listenComm();
+	printComm("Serial Ready");
+
+	/*
+	 *
+	 */
+	setPins(); 
+	delay(1000);
+}
+
+
+/*
+ * @method setup
+ * @description main litebrite loop
+ */
+void loop()
+{
+  now = millis();
+  if(now - timestamp >= interval){timestamp = now;};	
+	getPins(); 
+}
