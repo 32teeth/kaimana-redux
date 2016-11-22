@@ -54,9 +54,7 @@ this file is pretty damn clean and easy to read, that was the whole intent
 ###Comm.h
 this header file provide access and functionality to the Serial port on the arduino.
 
-**please note:** the original designers of the Kaimana board used digital pins 0 (RX) and 1 (TX) for button IO. 
-
-*methods*
+***please note:** the original designers of the Kaimana board used digital pins 0 (RX) and 1 (TX) for button IO. *
 
 ####startComm
 ```
