@@ -1,6 +1,6 @@
 # Kaimana Redux
 
-this is a public repo for a **basic version** of a mash up between the slimmed down [moledcule](http://moledcule.club) version of original Kaimana code
+this is a public repo for a **basic version** of a mash up between the slimmed down **[moledcule](http://moledcule.club)** version of original Kaimana code
 
 the intent behind this code is to normalize and introduce efficiencies to the existing Kaimana code base
 
