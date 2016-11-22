@@ -247,4 +247,4 @@ getGRB(purple_struct, getLong(purple_hex))
 
 ```
 
-***<u>have fun, play safe</u>***
+***have fun, play safe***
