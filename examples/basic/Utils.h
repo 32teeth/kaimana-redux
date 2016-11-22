@@ -86,21 +86,6 @@ RGB getRGB(RGB& rgb, unsigned long color)
 }
 
 /*
-** @method getRGB
-** @desc convert long values to rgb array
-** @param color {long} long value represantation of color
-** @return {int*}
-*/
-RGB getGRB(RGB& rgb, unsigned long color)
-{
-	rgb.g = (color>>16);
-	rgb.r = ((color>>8) & 0xff);
-	rgb.b = (color & 0xff);
-
-	return rgb;
-}
-
-/*
 ** @method getHEX
 ** @desc convert long values to rgb array
 ** @param color {long} long value represantation of color

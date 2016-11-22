@@ -51,10 +51,13 @@ how are pins mapped to the Kainana device
 ```
 this file is pretty damn clean and easy to read, that was the whole intent
 
+-----
+
 ###Comm.h
+
 this header file provide access and functionality to the Serial port on the arduino.
 
-***please note:** the original designers of the Kaimana board used digital pins 0 (RX) and 1 (TX) for button IO. *
+**please note:** *the original designers of the Kaimana board used digital pins 0 (RX) and 1 (TX) for button IO.*
 
 ####startComm
 ```
@@ -83,3 +86,164 @@ listenComm()
 */
 printComm(str)
 ```
+-----
+
+###Pins.h
+this file contains the assignement of the IO struct to specific pins, their input, state, type, and last toggled timestamp
+
+and example of the struct is as such
+
+```
+// definition
+typedef struct {
+	uint8_t pin;			// the pin for the input button
+	uint8_t mode;			// INPUT | OUTPUT
+	uint8_t state			// HIGH | LOW 
+	String type;			// "a" | "d"
+	unsigned long changed;	// last changed timestamp
+} IO;	
+
+// declaration example
+IO FIRST_PUNCH = {1, INPUT, HIGH, "d", 0};
+```
+
+####printPins
+```
+/*
+** @method printPins
+** @desc create string buffer and dump to serial
+*/
+printPins
+```
+
+###setPins
+```
+/*
+** @method setPins
+** @desc itterate through structs and invoke setPins
+*/
+setPins
+```
+
+###getPins
+```
+/*
+** @method getPins
+** @desc itterate through structs and set appropriate structs
+*/
+getPins
+```
+
+-----
+
+##Structure.h
+nothing really exciting here, simply a place for all of the programs structs to live
+
+-----
+##Utils.h
+
+###getBin
+convert an interger into a binary string
+```
+/*
+** @method getBin
+** @param number (int)
+** @return result {String} 
+** @desc converts the decimal param to binary string
+*/
+String getBin(int number)
+```
+
+###getLong
+convert an interger array into a long
+```
+/*
+** @method getLong
+** @desc convert rgb values to long int
+** @param r {int} red value
+** @param g {int} red value
+** @param b {int} red value
+** @return {long}
+*/
+long getLong(char r, char g, char b)
+```
+
+###getLong
+convert an hexadecimal into a long
+```
+/*
+** @method getLong
+** @desc convert hex values to long
+** @param color {hex} hex value represantation of color
+** @return {long}
+*/
+long getLong(String color)
+```
+
+###getRGB
+convert long into rgb array
+```
+/*
+** @method getRGB
+** @desc convert long values to rgb array
+** @param color {long} long value represantation of color
+** @return {int*}
+*/
+int* getRGB(unsigned long color)
+```
+
+###getRGB
+convert long into the passed struct pointer
+```
+/*
+** @method getRGB
+** @desc convert long values to rgb array
+** @param color {long} long value represantation of color
+** @return {int*}
+*/
+RGB getRGB(RGB& rgb, unsigned long color)
+```
+
+###getHEX
+convert long into hexadecimal
+```
+/*
+** @method getHEX
+** @desc convert long values to rgb array
+** @param color {long} long value represantation of color
+** @return {String}
+*/
+String getHEX(unsigned long color)
+```
+
+###getHEX
+convert int array into hexadecimal
+```
+/*
+** @method getHEX
+** @desc convert long values to rgb array
+** @param color {long} long value represantation of color
+** @return {String}
+*/
+String getHEX(int* rgb)
+```
+
+with the Utils.h you can do crazy stuff like this
+
+```
+// you like purple
+#define purple_hex "ffff00"
+
+// you want to conver the above hex into an RGB struct
+RGB purple_struct;
+
+// you can nest utilities
+getGRB(purple_struct, getLong(purple_hex))
+
+// purple.r is now 255
+// purple.g is now 0
+// purple.b is now 255
+
+```
+
+***<u>have fun, play safe</u>***
