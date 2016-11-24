@@ -270,9 +270,8 @@ if there is a bug, we'll let you know what went wrong.
 <img src="reference/step3.png" width="50%">
 
 ####copmile your files
-upon success you can download your ***hex*** file
-
 <img src="reference/step4.png" width="50%">
+upon success you can download your ***hex*** file
 
 ####if there is an error, you'll see the red icon
 <img src="reference/step5.png" width="50%">
