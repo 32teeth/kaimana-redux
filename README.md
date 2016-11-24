@@ -259,23 +259,25 @@ if there is a bug, we'll let you know what went wrong.
 
 ### drag and drop
 ####add your files to the drop area
-![step1](reference/step1.png)
+<img src="reference/step1.png" width="50%">
+
+
 
 ####see your files
-![step2](reference/step2.png)
+<img src="reference/step2.png" width="50%">
 
 ####create a collection
-![step3](reference/step3.png)
+<img src="reference/step3.png" width="50%">
 
 ####copmile your files
 upon success you can download your ***hex*** file
-![step4](reference/step4.png)
+<img src="reference/step4.png" width="50%">
 
 ####if there is an error, you'll see the red icon
-![step5](reference/step5.png)
+<img src="reference/step5.png" width="50%">
 
 ####clicking the red icon, you'll see the error
-![step6](reference/step6.png)
+<img src="reference/step6.png" width="50%">
 
 -----
 
