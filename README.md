@@ -271,6 +271,7 @@ if there is a bug, we'll let you know what went wrong.
 
 ####copmile your files
 upon success you can download your ***hex*** file
+
 <img src="reference/step4.png" width="50%">
 
 ####if there is an error, you'll see the red icon
