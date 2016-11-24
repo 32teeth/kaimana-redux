@@ -247,4 +247,36 @@ getGRB(purple_struct, getLong(purple_hex))
 
 ```
 
+
+
+# compiler
+
+once you have your files ready, you can test the compiler (without the Arduino IDE), yup, that's right, we built a ***[compiler as a service](http://compiler.moledcule.club)*** just for this functionality
+
+simply visit our  ***[compiler as a service](http://compiler.moledcule.club/#/compiler)*** drag and drop your files and off you go.
+
+if there is a bug, we'll let you know what went wrong.
+
+### drag and drop
+####add your files to the drop area
+![step1](reference/step1.png)
+
+####see your files
+![step2](reference/step2.png)
+
+####create a collection
+![step3](reference/step3.png)
+
+####copmile your files
+upon success you can download your ***hex*** file
+![step4](reference/step4.png)
+
+####if there is an error, you'll see the red icon
+![step5](reference/step5.png)
+
+####clicking the red icon, you'll see the error
+![step6](reference/step6.png)
+
+-----
+
 ***have fun, play safe***
