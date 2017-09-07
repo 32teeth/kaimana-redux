@@ -258,7 +258,7 @@ simply visit our  ***[compiler as a service](http://compiler.moledcule.club/#/co
 if there is a bug, we'll let you know what went wrong.
 
 ### drag and drop
-####add your files to the drop area
+#### add your files to the drop area
 <img src="reference/step1.png" width="50%">
 
 
