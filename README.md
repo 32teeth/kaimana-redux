@@ -8,7 +8,7 @@ in the **examples folder** you will find a few sketches *(currently there is onl
 
 -----
 
-##basic example
+## basic example
 files:
 * basic.ino *(main program)*
 * Comm.h *(all comm port utilities)*
@@ -18,7 +18,7 @@ files:
 
 -----
 
-###basic.ino
+### basic.ino
 how are pins mapped to the Kainana device
 ```
                                       +-----+
@@ -53,14 +53,14 @@ this file is pretty damn clean and easy to read, that was the whole intent
 
 -----
 
-###Comm.h
+### Comm.h
 
 this header file provide access and functionality to the Serial port on the arduino.
 
 **note** *the original designers of the Kaimana board used digital pins 0 (RX) and 1 (TX) for button IO.*
 
 
-####startComm
+#### startComm
 ```
 /*
 ** @method startComm
@@ -69,7 +69,7 @@ this header file provide access and functionality to the Serial port on the ardu
 startComm()
 ```
 
-####listenComm
+#### listenComm
 ```
 /*
 ** @method listenComm
@@ -78,7 +78,7 @@ startComm()
 listenComm()
 ```
 
-####printComm
+#### printComm
 ```
 /*
 ** @method printComm
@@ -89,7 +89,7 @@ printComm(str)
 ```
 -----
 
-###Pins.h
+### Pins.h
 this file contains the assignement of the IO struct to specific pins, their input, state, type, and last toggled timestamp
 
 and example of the struct is as such
@@ -108,7 +108,7 @@ typedef struct {
 IO FIRST_PUNCH = {1, INPUT, HIGH, "d", 0};
 ```
 
-####printPins
+#### printPins
 ```
 /*
 ** @method printPins
@@ -117,7 +117,7 @@ IO FIRST_PUNCH = {1, INPUT, HIGH, "d", 0};
 printPins
 ```
 
-###setPins
+### setPins
 ```
 /*
 ** @method setPins
@@ -126,7 +126,7 @@ printPins
 setPins
 ```
 
-###getPins
+### getPins
 ```
 /*
 ** @method getPins
@@ -137,13 +137,13 @@ getPins
 
 -----
 
-##Structure.h
+## Structure.h
 nothing really exciting here, simply a place for all of the programs structs to live
 
 -----
-##Utils.h
+## Utils.h
 
-###getBin
+### getBin
 convert an interger into a binary string
 ```
 /*
@@ -155,7 +155,7 @@ convert an interger into a binary string
 String getBin(int number)
 ```
 
-###getLong
+### getLong
 convert an interger array into a long
 ```
 /*
@@ -169,7 +169,7 @@ convert an interger array into a long
 long getLong(char r, char g, char b)
 ```
 
-###getLong
+### getLong
 convert an hexadecimal into a long
 ```
 /*
@@ -181,7 +181,7 @@ convert an hexadecimal into a long
 long getLong(String color)
 ```
 
-###getRGB
+### getRGB
 convert long into rgb array
 ```
 /*
@@ -193,7 +193,7 @@ convert long into rgb array
 int* getRGB(unsigned long color)
 ```
 
-###getRGB
+### getRGB
 convert long into the passed struct pointer
 ```
 /*
@@ -205,7 +205,7 @@ convert long into the passed struct pointer
 RGB getRGB(RGB& rgb, unsigned long color)
 ```
 
-###getHEX
+### getHEX
 convert long into hexadecimal
 ```
 /*
@@ -217,7 +217,7 @@ convert long into hexadecimal
 String getHEX(unsigned long color)
 ```
 
-###getHEX
+### getHEX
 convert int array into hexadecimal
 ```
 /*
@@ -263,21 +263,21 @@ if there is a bug, we'll let you know what went wrong.
 
 
 
-####see your files
+#### see your files
 <img src="reference/step2.png" width="50%">
 
-####create a collection
+#### create a collection
 <img src="reference/step3.png" width="50%">
 
-####copmile your files
-#####upon success you can download your ***hex*** file
+#### copmile your files
+##### upon success you can download your ***hex*** file
 <img src="reference/step4.png" width="50%">
 
 
-####if there is an error, you'll see the red icon
+#### if there is an error, you'll see the red icon
 <img src="reference/step5.png" width="50%">
 
-####clicking the red icon, you'll see the error
+#### clicking the red icon, you'll see the error
 <img src="reference/step6.png" width="50%">
 
 -----
